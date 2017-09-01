@@ -11,7 +11,6 @@
 
 <meta name="author" content="Chris Kozak" />
 
-<meta name="date" content="2017-08-30" />
 
 <title>dplyr</title>
 
@@ -119,7 +118,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">dplyr</h1>
 <h4 class="author"><em>Chris Kozak</em></h4>
-<h4 class="date"><em>August 30, 2017</em></h4>
+<h4 class="date"><em>September 1, 2017</em></h4>
 
 </div>
 
@@ -129,6 +128,60 @@ $(document).ready(function () {
 <p>When using dplyr, you can filter columns and rows by using select and filter. Let’s look at an example using the Lahman baseball database. We first have to load the Lahman and dplyr packages.</p>
 <pre class="r"><code>library(Lahman)
 library(dplyr)</code></pre>
+<p>Now, suppose we would like to see the homerun totals for the 1927 Yankees. We could run the following code:</p>
+<pre class="r"><code>Batting %&gt;%
+  select(playerID, yearID, teamID, HR)%&gt;%
+  filter(teamID==&quot;NYA&quot;, yearID==2006)</code></pre>
+<pre><code>##     playerID yearID teamID HR
+## 1  abreubo01   2006    NYA  7
+## 2   beamtj01   2006    NYA  0
+## 3   beanco01   2006    NYA  0
+## 4  brunebr01   2006    NYA  0
+## 5  cabreme01   2006    NYA  7
+## 6  cairomi01   2006    NYA  0
+## 7  cannian01   2006    NYA  1
+## 8   canoro01   2006    NYA 15
+## 9  chacosh01   2006    NYA  0
+## 10 crosbbu01   2006    NYA  1
+## 11 damonjo01   2006    NYA 24
+## 12 doteloc01   2006    NYA  0
+## 13 ericksc01   2006    NYA  0
+## 14 farnsky01   2006    NYA  0
+## 15 fasansa01   2006    NYA  1
+## 16 giambja01   2006    NYA 37
+## 17 greenni01   2006    NYA  2
+## 18 guielaa01   2006    NYA  4
+## 19  hennse01   2006    NYA  0
+## 20 jeterde01   2006    NYA 14
+## 21 johnsra05   2006    NYA  0
+## 22 karstje01   2006    NYA  0
+## 23 lidleco01   2006    NYA  0
+## 24  longte01   2006    NYA  0
+## 25 matsuhi01   2006    NYA  8
+## 26 mussimi01   2006    NYA  0
+## 27 myersmi01   2006    NYA  0
+## 28 nievewi01   2006    NYA  0
+## 29 phillan01   2006    NYA  7
+## 30 ponsosi01   2006    NYA  0
+## 31 posadjo01   2006    NYA 23
+## 32 proctsc01   2006    NYA  0
+## 33 rasneda01   2006    NYA  0
+## 34 reeseke01   2006    NYA  0
+## 35 riverma01   2006    NYA  0
+## 36 rodrial01   2006    NYA 35
+## 37 sheffga01   2006    NYA  6
+## 38 smallaa01   2006    NYA  0
+## 39 smithma04   2006    NYA  0
+## 40 stinnke01   2006    NYA  1
+## 41 sturtta01   2006    NYA  0
+## 42 thompke01   2006    NYA  1
+## 43 verasjo01   2006    NYA  0
+## 44 villoro01   2006    NYA  0
+## 45  wangch01   2006    NYA  0
+## 46 willibe02   2006    NYA 12
+## 47 wilsocr03   2006    NYA  4
+## 48 wilsokr01   2006    NYA  0
+## 49 wrighja02   2006    NYA  0</code></pre>
 </div>
 
 

@@ -1,7 +1,7 @@
 ---
 title: "dplyr"
 author: "Chris Kozak"
-date: "August 30, 2017"
+date: "September 1, 2017"
 output: html_document
 ---
 
@@ -12,5 +12,13 @@ When using dplyr, you can filter columns and rows by using select and filter. Le
 ```{r message=FALSE, warning=FALSE}
 library(Lahman)
 library(dplyr)
+```
+
+Now, suppose we would like to see the homerun totals for the 1927 Yankees. We could run the following code:
+
+```{r message=FALSE, warning=FALSE}
+Batting %>%
+  select(playerID, yearID, teamID, HR)%>%
+  filter(teamID=="NYA", yearID==2006)
 ```
 
