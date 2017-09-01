@@ -19,6 +19,6 @@ Now, suppose we would like to see the homerun totals for the 1927 Yankees. We co
 ```{r message=FALSE, warning=FALSE}
 Batting %>%
   select(playerID, yearID, teamID, HR)%>%
-  filter(teamID=="NYA", yearID==2006)
+  filter(teamID=="NYA", yearID==1927)
 ```
 
